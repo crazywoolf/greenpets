@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Демо GreenPets: настройка ухода за одним растением на 30 дней." />
+    <title>GreenPets — демо ухода</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="app-body">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="GreenPets, на главную">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>greenpets</span>
+      </a>
+      <a class="back-link" href="index.html">← На главную</a>
+    </header>
+
+    <main class="app-shell">
+      <div class="app-intro">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> демо GreenPets</p>
+          <h1>Настроим уход за одним растением.</h1>
+          <p>Заполните несколько полей — и получите статус, следующий шаг и план на 30 дней.</p>
+        </div>
+        <span class="local-badge">Сохраняется на этом устройстве</span>
+      </div>
+
+      <div class="app-layout">
+        <form id="care-form" class="form-card">
+          <div class="card-heading">
+            <span class="step-label">01 / растение</span>
+            <h2>Что будем наблюдать?</h2>
+          </div>
+          <div id="plant-options" class="plant-options" role="radiogroup" aria-label="Выбор растения"></div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Где стоит растение?</span>
+              <select id="light" name="light">
+                <option value="bright">Светлое место, но без прямого солнца</option>
+                <option value="direct">Есть прямое солнце</option>
+                <option value="low">Света мало</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Как давно был полив?</span>
+              <select id="watering" name="watering">
+                <option value="1">1–2 дня назад</option>
+                <option value="4">3–5 дней назад</option>
+                <option value="8">6–10 дней назад</option>
+                <option value="14">Больше 10 дней назад</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Есть ли дренажное отверстие?</span>
+              <select id="drainage" name="drainage">
+                <option value="yes">Да</option>
+                <option value="no">Не знаю или нет</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Что сейчас беспокоит?</span>
+              <select id="symptoms" name="symptoms">
+                <option value="none">Ничего заметного</option>
+                <option value="dry">Сухие или скрученные листья</option>
+                <option value="yellow">Жёлтые листья</option>
+                <option value="droop">Листья повисли</option>
+              </select>
+            </label>
+          </div>
+          <button class="button button-primary form-submit" type="submit">Собрать план ухода <span aria-hidden="true">→</span></button>
+          <p class="form-note">Это демонстрационная рекомендация, не диагноз растения.</p>
+        </form>
+
+        <section id="result-panel" class="result-card" aria-live="polite">
+          <div class="empty-result">
+            <div class="empty-icon">✦</div>
+            <p class="eyebrow">ваш результат появится здесь</p>
+            <h2>Сначала расскажите о растении</h2>
+            <p>Выберите один вариант слева — мы соберём первый понятный шаг.</p>
+          </div>
+        </section>
+      </div>
+
+      <p class="app-footnote">В этой версии рекомендации собраны по сценариям, чтобы проверить саму логику ухода. Фото, распознавание и несколько растений — следующие шаги.</p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
